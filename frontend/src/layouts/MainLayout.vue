@@ -1,44 +1,96 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
     <q-drawer
-      v-model="leftDrawerOpen"
+      v-model="drawer"
       show-if-above
+      :width=250
+      :breakpoint=425
       bordered
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
+      <q-btn
+        align="left"
+        class="padding-top q-pl-xl full-width q-ma-sm row"
+        size="20px"
+        :icon="mdiViewDashboardOutline"
+        flat
+        label="Actualités"
+        no-caps
+      />
+      <q-btn
+        align="left"
+        class="q-pl-xl full-width q-ma-sm row"
+        size="20px"
+        :icon="mdiCheckboxMarkedCirclePlusOutline"
+        flat
+        label="Actions"
+        no-caps
+      />
+      <q-btn
+        align="left"
+        class="q-pl-xl full-width q-ma-sm row"
+        :icon="mdiNoteTextOutline"
+        size="20px"
+        flat
+        label="Declarations"
+        no-caps
+        no-wrap
+      />
+      <q-btn
+        align="left"
+        class="q-pl-xl full-width q-ma-sm row"
+        :icon="mdiStorefrontOutline"
+        size="20px"
+        flat
+        label="Réseau"
+        no-caps
+      />
+      <q-btn
+        align="left"
+        class="q-pl-xl full-width left-side q-ma-sm q-my-lg row"
+        size="20px"
+        :icon="mdiHammerWrench"
+        flat
+        label="Gestion"
+        no-caps
+      >
+      <q-avatar
+        class="q-ml-lg"
+        color="teal-10"
+        text-color="white"
+        size="30px">
+        {{collections_number}}
+      </q-avatar>
+      <!-- <q-badge
+        class="q-ml-xl"
+        color=""
+        :label="collections_number"
+        rounded
+      /> -->
+      </q-btn>
+      <div class="bottom">
+        <q-btn
+          align="left"
+          class="q-pl-xl q-ma-sm row relative"
+          :icon="mdiHelpCircleOutline"
+          flat
+          label="Aide"
+          no-caps
         />
-      </q-list>
+        <q-img
+          class="q-ma-lg relative"
+          src="/drawer-logo.png"/>
+      </div>
     </q-drawer>
-
+      <q-btn
+        v-if="!drawer"
+        class="fixed-top-left q-ma-xl above"
+        flat
+        dense
+        round
+        icon="menu"
+        aria-label="Menu"
+        @click="drawer = true"
+      />
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -47,70 +99,53 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import EssentialLink from 'components/EssentialLink.vue';
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
+import { mdiViewDashboardOutline, mdiCheckboxMarkedCirclePlusOutline, mdiNoteTextOutline, mdiStorefrontOutline, mdiHammerWrench, mdiHelpCircleOutline } from '@quasar/extras/mdi-v6';
+import api from 'src/services/api';
 
 export default defineComponent({
   name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
+  setup() {
+    const drawer = ref(false);
+    const collections_number = ref(0);
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      drawer,
+      collections_number,
+      mdiViewDashboardOutline: '',
+      mdiCheckboxMarkedCirclePlusOutline: '',
+      mdiNoteTextOutline: '',
+      mdiStorefrontOutline: '',
+      mdiHammerWrench: '',
+      mdiHelpCircleOutline: '',
     }
-  }
+  },
+  created() {
+    this.mdiViewDashboardOutline = mdiViewDashboardOutline;
+    this.mdiCheckboxMarkedCirclePlusOutline = mdiCheckboxMarkedCirclePlusOutline;
+    this.mdiNoteTextOutline = mdiNoteTextOutline;
+    this.mdiStorefrontOutline = mdiStorefrontOutline;
+    this.mdiHammerWrench = mdiHammerWrench;
+    this.mdiHelpCircleOutline = mdiHelpCircleOutline;
+  },
+  mounted() {
+    this.fetchCollections()
+  },
+  methods: {
+    async fetchCollections() {
+      const response = await api.get("/collections")
+      this.collections_number = response.data.length
+    },
+  },
 });
 </script>
+
+<style lang="sass" scoped>
+.padding-top
+  margin-top: 16vh
+
+.above
+  z-index: 9999
+
+.bottom
+  position: absolute
+  bottom: 10px
+</style>

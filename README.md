@@ -1,10 +1,13 @@
 # DEPENDENCIES
 
 Rails 7.0.5
+
 Ruby 3.2.2
-Gem 3.4.14 
+
+Gem 3.4.14
 
 node 18.16.0
+
 npm 9.7.1
 
 # README

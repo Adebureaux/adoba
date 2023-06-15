@@ -1,22 +1,20 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page>
+    <q-item>
+      <img src="https://thumbs.dreamstime.com/b/ionospheric-observatory-giant-satellite-dish-receiving-signal-239588061.jpg">
+    </q-item>
+    <img src="https://thumbs.dreamstime.com/b/ionospheric-observatory-giant-satellite-dish-receiving-signal-239588061.jpg">
   </q-page>
 </template>
 
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+// import ExampleComponent from 'components/ExampleComponent.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
+  // components: { ExampleComponent },
   setup () {
     const todos = ref<Todo[]>([
       {

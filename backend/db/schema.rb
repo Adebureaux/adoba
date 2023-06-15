@@ -15,6 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_142233) do
     t.string "name"
     t.datetime "date"
     t.string "association_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.json "dynamic_attributes", default: {}, null: false
   end
 

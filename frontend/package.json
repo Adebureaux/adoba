@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.0.1",
   "description": "Mini-application of food collecion reporting",
-  "productName": "adoba_app",
+  "productName": "Adoba",
   "author": "adebureaux@gmail.com",
   "private": true,
   "scripts": {

@@ -1,0 +1,715 @@
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCollections (20230615120225)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "collections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date" datetime(6), "association" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCollections (20230615120225)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "collections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date" datetime(6), "association" varchar)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230615120225"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-15 12:31:32.011652"], ["updated_at", "2023-06-15 12:31:32.011652"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Association (20230615135015)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Association (20230615135015)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135451)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135451)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromResourceName (20230615135918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveOldColumnNameFromCollection (20230615140338)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acollections" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "date" datetime(6) DEFAULT NULL, "association" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "acollections" ("id","name","date","association")
+                     SELECT "id","name","date","association" FROM "collections"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "collections"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "collections" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "date" datetime(6) DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "collections" ("id","name","date")
+                     SELECT "id","name","date" FROM "acollections"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acollections"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230615140338"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewColumnNameToCollection (20230615140418)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "collections" ADD "association_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230615140418"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name") VALUES (?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name") VALUES (?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name") VALUES (?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name") VALUES (?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name") VALUES (?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name") VALUES (?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewColumnToCollection (20230615141110)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "collections" ADD "dynamic_attribues" jsonb[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230615141110"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attribues") VALUES (?, ?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"], ["dynamic_attribues", nil]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attribues") VALUES (?, ?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"], ["dynamic_attribues", nil]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attribues") VALUES (?, ?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"], ["dynamic_attribues", nil]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attribues") VALUES (?, ?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"], ["dynamic_attribues", nil]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveFromCollection (20230615141751)
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveFromCollection (20230615141751)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acollections" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "date" datetime(6) DEFAULT NULL, "association_name" varchar DEFAULT NULL, "dynamic_attribues" json DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "acollections" ("id","name","date","association_name","dynamic_attribues")
+                     SELECT "id","name","date","association_name","dynamic_attribues" FROM "collections"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "collections"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "collections" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "date" datetime(6) DEFAULT NULL, "association_name" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "collections" ("id","name","date","association_name")
+                     SELECT "id","name","date","association_name" FROM "acollections"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "acollections"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230615141751"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewColumnToCollection (20230615142233)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "collections" ADD "dynamic_attributes" jsonb DEFAULT '{}' NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230615142233"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"], ["dynamic_attributes", "{}"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.3ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"], ["dynamic_attributes", "{}"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"], ["dynamic_attributes", "{}"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"], ["dynamic_attributes", "{}"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection3"], ["date", "2023-06-16 15:45:12"], ["association_name", "association3"], ["dynamic_attributes", "{\"image\":\"https://static.actu.fr/uploads/2022/11/photo-banque-alimentaire-collecte-hivernale.jpg\"}"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+Started GET "/collection" for ::1 at 2023-06-15 17:12:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/collection"):
+  
+Started GET "/collection" for ::1 at 2023-06-15 17:12:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/collection"):
+  
+Started GET "/collections" for ::1 at 2023-06-15 17:12:59 +0200
+Processing by CollectionsController#index as */*
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 10414)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection1"], ["date", "2023-06-15 11:11:11"], ["association_name", "association1"], ["dynamic_attributes", "{}"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection2"], ["date", "2023-06-15 12:42:42"], ["association_name", "association2"], ["dynamic_attributes", "{}"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCollection Create (0.1ms)[0m  [1m[32mINSERT INTO "collections" ("name", "date", "association_name", "dynamic_attributes") VALUES (?, ?, ?, ?)[0m  [["name", "collection3"], ["date", "2023-06-16 15:45:12"], ["association_name", "association3"], ["dynamic_attributes", "{\"image\":\"https://static.actu.fr/uploads/2022/11/photo-banque-alimentaire-collecte-hivernale.jpg\"}"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/collections" for ::1 at 2023-06-15 17:13:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CollectionsController#index as */*
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 9628)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:17:15 +0200
+Processing by CollectionsController#index as */*
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 2281)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:22:29 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2276)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:22:35 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:22:39 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 2274)
+
+
+Started GET "/collection" for ::1 at 2023-06-15 17:22:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/collection"):
+  
+Started GET "/collections" for ::1 at 2023-06-15 17:22:55 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 2261)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:23:06 +0200
+Processing by CollectionsController#index as */*
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 2265)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:23:59 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 2271)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:01 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 2261)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:07 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2261)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:12 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 2261)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:16 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 2261)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:21 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 2263)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:27 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:31 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:24:33 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:25:14 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:25:16 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:27:08 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:27:08 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:27:09 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 2263)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:27:09 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:27:09 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:28:31 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 4633)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:28:37 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2264)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:28:40 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:02 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:03 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:06 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:13 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 2263)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:16 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:22 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:28 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:29 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:34 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:46 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:50 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:50 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:29:53 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:06 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:11 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:12 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:18 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:22 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:36 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:50 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:58 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:30:59 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:31:06 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collections" for ::1 at 2023-06-15 17:31:11 +0200
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.1ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2262)
+
+
+Started GET "/collectionss" for ::1 at 2023-06-15 17:31:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/collectionss"):
+  
+Started GET "/collectionss" for ::1 at 2023-06-15 17:31:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/collectionss"):
+  

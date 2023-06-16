@@ -46,7 +46,7 @@
       />
       <q-btn
         align="left"
-        class="q-pl-xl full-width left-side q-ma-sm q-my-lg row"
+        class="q-pl-xl full-width q-ma-sm q-my-lg row"
         size="20px"
         :icon="mdiHammerWrench"
         flat
@@ -57,32 +57,36 @@
         class="q-ml-lg"
         color="teal-10"
         text-color="white"
-        size="30px">
+        size="30px"
+      >
         {{collections_number}}
       </q-avatar>
       </q-btn>
       <div class="bottom">
-        <q-btn
-          align="left"
-          class="q-pl-xl q-ma-sm row relative"
-          :icon="mdiHelpCircleOutline"
-          flat
-          label="Aide"
-          no-caps
-        />
-        <q-img
-          class="q-ma-lg relative"
-          src="/drawer-logo.png"/>
+        <div>
+          <q-btn
+            align="left"
+            class="q-pl-xl full-width q-ma-sm row"
+            :icon="mdiHelpCircleOutline"
+            size="20px"
+            flat
+            label="Aide"
+            no-caps
+          />
+        </div>
+        <div class="q-ma-xl">
+          <q-img src="/drawer-logo.png" />
+        </div>
       </div>
     </q-drawer>
       <q-btn
         v-if="!drawer"
-        class="fixed-top-left q-ma-sm above"
+        class="fixed-left vertical-middle q-ma-sm above"
+        color="grey-7"
         flat
         dense
-        round
-        icon="menu"
-        aria-label="Menu"
+        :icon="mdiArrowRightBoldOutline"
+        aria-label="Drawer"
         @click="drawer = true"
       />
     <q-page-container>
@@ -93,7 +97,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { mdiViewDashboardOutline, mdiCheckboxMarkedCirclePlusOutline, mdiNoteTextOutline, mdiStorefrontOutline, mdiHammerWrench, mdiHelpCircleOutline } from '@quasar/extras/mdi-v6';
+import { mdiViewDashboardOutline, mdiCheckboxMarkedCirclePlusOutline, mdiNoteTextOutline, mdiStorefrontOutline, mdiHammerWrench, mdiHelpCircleOutline, mdiArrowRightBoldOutline } from '@quasar/extras/mdi-v6';
 import api from 'src/services/api';
 
 export default defineComponent({
@@ -110,6 +114,7 @@ export default defineComponent({
       mdiStorefrontOutline: '',
       mdiHammerWrench: '',
       mdiHelpCircleOutline: '',
+      mdiArrowRightBoldOutline: '',
     }
   },
   created() {
@@ -119,14 +124,15 @@ export default defineComponent({
     this.mdiStorefrontOutline = mdiStorefrontOutline;
     this.mdiHammerWrench = mdiHammerWrench;
     this.mdiHelpCircleOutline = mdiHelpCircleOutline;
+    this.mdiArrowRightBoldOutline = mdiArrowRightBoldOutline;
   },
   mounted() {
     this.fetchCollections()
   },
   methods: {
     async fetchCollections() {
-      const response = await api.get('/collections')
-      this.collections_number = response.data.length
+      const response = await api.get('/collections/count')
+      this.collections_number = response.data.count
     },
   },
 });
@@ -141,5 +147,9 @@ export default defineComponent({
 
 .bottom
   position: absolute
-  bottom: 10px
+  bottom: 12px
+  display: flex
+  flex-direction: column
+  width: 100%
+  justify-content: flex-start
 </style>

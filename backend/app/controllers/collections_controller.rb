@@ -55,4 +55,10 @@ class CollectionsController < ApplicationController
 		@collection.destroy
 		render json: @collection
 	end
+
+	# Get the number of collection element
+	def count
+		count = Collection.count
+		render json: { count: count }
+	end
 end

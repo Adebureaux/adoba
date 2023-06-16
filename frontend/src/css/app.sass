@@ -1,0 +1,4 @@
+@use "./interpolate" as r
+
+.interpolate-font
+  @include r.interpolate(font-size, 320px, 2560px, 12px, 30px)

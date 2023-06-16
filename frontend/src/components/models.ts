@@ -1,8 +1,6 @@
-export interface Todo {
+export interface Collection {
   id: number;
-  content: string;
-}
-
-export interface Meta {
-  totalCount: number;
+  name: string;
+  association_name: string;
+  dynamic_attributes: Array<any>;
 }

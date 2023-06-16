@@ -10,6 +10,8 @@ node 18.16.0
 
 npm 9.7.1
 
+quasar 2.0.0
+
 # README
 
 This README would normally document whatever steps are necessary to get the

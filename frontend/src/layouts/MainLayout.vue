@@ -60,12 +60,6 @@
         size="30px">
         {{collections_number}}
       </q-avatar>
-      <!-- <q-badge
-        class="q-ml-xl"
-        color=""
-        :label="collections_number"
-        rounded
-      /> -->
       </q-btn>
       <div class="bottom">
         <q-btn
@@ -83,7 +77,7 @@
     </q-drawer>
       <q-btn
         v-if="!drawer"
-        class="fixed-top-left q-ma-xl above"
+        class="fixed-top-left q-ma-sm above"
         flat
         dense
         round
@@ -131,7 +125,7 @@ export default defineComponent({
   },
   methods: {
     async fetchCollections() {
-      const response = await api.get("/collections")
+      const response = await api.get('/collections')
       this.collections_number = response.data.length
     },
   },

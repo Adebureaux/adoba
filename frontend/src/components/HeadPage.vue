@@ -2,7 +2,7 @@
   <q-item class="head-container q-pa-xl">
     <div class="q-mr-lg">
       <q-icon
-        class=" full-height"
+        class="full-height"
         color="grey-7"
         :name="mdiViewDashboardOutline"
         size="20px"
@@ -14,13 +14,14 @@
     <q-space />
     <div>
       <q-btn
+      class="full-height"
         color="primary"
         flat
         :icon="mdiBell"
       />
     </div>
     <div>
-      <q-avatar class="q-ml-lg" color="primary">
+      <q-avatar size="50px" class="q-ml-lg" color="primary">
         <q-img src="head-logo.png"></q-img>
       </q-avatar>
     </div>

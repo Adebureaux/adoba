@@ -57,7 +57,7 @@
         no-caps
         to="/gestion"
       />
-      <div class="q-pt-xl">
+      <div class="bottom">
         <div>
           <q-btn
             align="left"
@@ -137,7 +137,10 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .padding-top
-  margin-top: 18vh
+  margin-top: 15vh
+
+.bottom
+  margin-top: 25vh
 .above
   z-index: 9999
 </style>

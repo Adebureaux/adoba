@@ -1,4 +1,4 @@
-# DEPENDENCIES
+# System dependencies
 
 ruby 3.2.2
 
@@ -10,7 +10,7 @@ npm 9.7.1
 
 quasar client 2.0.0
 
-# INSTUCTIONS TO RUN
+# How to run this project
 
   * ```git clone https://github.com/Adebureaux/adoba.git```
   * ```cd adoba```
@@ -29,29 +29,43 @@ quasar client 2.0.0
 Access the web app at this address : http://localhost:9000
 Access the api base url : http://localhost:3000
 
+# API Routes
 
+The api routes are defined as follow:
+## Indicators
+* ```GET /indicators```
+Returns the string array of indicators.
 
-# README
+* ```PATCH /indicators:indicator```
+Update the string array of indicators.
+Params: indicator as string
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* ```DELETE /indicators```
+Takes a string :indicator and removes it from the array of indicators.
+Params: indicator as string
 
-Things you may want to cover:
+## Collections
+Collection object is defined as follow:
+- id: number
+- name: string
+- date: date
+- association_name: string
+- dynamic_attribute: { dynamic_attribute: {} }
 
-* Ruby version
+* ```GET /collections```
+Returns the array of collection object.
 
-* System dependencies
+* ```GET /collections/count```
+Returns the number of collections in the database.
 
-* Configuration
+* ```POST /collections```
+Takes a Collection object and add it to the database.
+Params: Collection object
 
-* Database creation
+* ```PATCH /collections``` (Implemented but not used yet)
+Takes a Collection object and add it to the database.
+Params: Collection object
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ```DELETE /collections``` (Implemented but not used yet)
+Takes a Collection id and delete it from the database.
+Params: id as number

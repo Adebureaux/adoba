@@ -5,12 +5,6 @@ class CollectionsController < ApplicationController
 		render json: @collections
 	end
 
-	# Reflect instance of a collection item
-	def show
-		@collection = Collection.find(params[:id])
-		render json: @collection
-	end
-
 	# Make an instance of the collection
 	def create
 		dynamic_attributes = params.except(:controller, :action, :name, :date, :association_name)
@@ -27,7 +21,7 @@ class CollectionsController < ApplicationController
 		if @collection.save
 			render json: @collection
 		else
-			render json: { error: @collection.errors.full_messages }, status: :unprocessable_entity
+			render json: { error: @collection.errors.full_messages.map { |msg| msg.gsub(/^(Name|Association name)\s/, '') } }, status: :unprocessable_entity
 		end
 	end
 

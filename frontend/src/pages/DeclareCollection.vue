@@ -1,32 +1,41 @@
 <template>
   <q-page class="bg-cyan-1">
     <HeadPage location="Declarations"/>
-    <div class="bg-wite text-black text-center q-pa-md flex flex-center">
-     <div>
-      <div class="interpolate-font-title">
+      <div class="q-px-md q-ml-xl interpolate-font-title">
         Déclarer une collecte
       </div>
-      <div>
-        <q-form @submit="onSubmit">
-          <div class="interpolate-font">Date</div>
-          <q-date minimal v-model="date" />
-          <q-input required filled v-model="name" label="Nom de la collecte" />
-          <q-input required filled v-model="asso" label="Nom de l'association" />
-          <div v-for="(indicator, i) in indicators" v-bind:key="i">
-            <q-input required filled v-model="input[i]" :label=indicator />
-          </div>
-          <div>
-            <q-btn type="submit" color="primary" label="submit" />
+      <div class="q-ml-xl">
+        <q-form @submit="onSubmit" class="q-gutter-md">
+          <div class="row no-wrap">
+            <div class="col-auto q-ma-md">
+              <div class="q-pa-xs">
+                <q-date minimal v-model="date" />
+              </div>
+            </div>
+            <div class="col-auto q-mt-md">
+              <div class="q-pa-xs">
+                <q-input required filled v-model="name" label="Nom de la collecte" />
+              </div>
+              <div class="q-pa-xs">
+                <q-input required filled v-model="asso" label="Nom de l'association" />
+              </div>
+              <div v-for="(indicator, i) in indicators" :key="i" class="q-pa-xs">
+                <q-input required filled v-model="input[i]" :label="indicator" />
+              </div>
+              <div class="text-center q-pa-xs q-my-lg">
+                <q-btn type="submit" color="primary" label="Déclarer" />
+              </div>
+            </div>
           </div>
         </q-form>
+
       </div>
-    </div>
-  </div>
 </q-page>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { useQuasar } from 'quasar';
 import api from 'src/services/api';
 import HeadPage from 'components/HeadPage.vue';
 import { ICollection } from 'components/models';
@@ -34,6 +43,26 @@ import { ICollection } from 'components/models';
 export default defineComponent({
   name: 'DecalreCollection',
   components: { HeadPage },
+  setup() {
+    const $q = useQuasar();
+
+    const success = () => {
+      $q.notify({
+        type: 'positive',
+        message: 'La collecte a été enregistrée avec succès.'
+      });
+    }
+    const failed = (message: string) => {
+      $q.notify({
+        type: 'warning',
+        message: `${message}.`
+      });
+    }
+    return {
+      success,
+      failed
+    }
+  },
   data() {
     const asso = ref('');
     const name = ref('');
@@ -80,15 +109,15 @@ export default defineComponent({
         this.name = '';
         this.input = [] as string[];
         this.date = new Date().toLocaleDateString('en-CA').replace(/-/g, '/');
-        this.$router.push({
-          path: '/actions'
-        })
+        this.$router.push({ path: '/actions' });
+        this.success();
       })
       .catch(error => {
         if (error.code === 'ERR_NETWORK')
           console.error('Network error: Cant connect the API.')
         else
           console.error(error.message)
+        this.failed(error.response.data.error);
       })
     },
   }

@@ -1,10 +1,10 @@
 <template>
-  <div class="row" style="width: 95%;">
+  <div class="row">
     <div class="full-width">
-      <div class="q-pa-md">
+      <div class="q-pa-md q-mx-xl">
         <q-card flat>
           <q-card-section>
-            Nom de la collecte: <span class="text-bold">{{ collection.name }}</span>
+           <span class="text-bold interpolate-font">{{ collection.name }}</span>
          </q-card-section>
          <q-card-section>
           Association: <span class="text-bold">{{ collection.association_name }}</span>

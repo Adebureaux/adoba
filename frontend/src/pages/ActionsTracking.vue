@@ -1,10 +1,13 @@
 <template>
-<q-page class="bg-cyan-1">
-  <HeadPage location="Actions" />
-  <div v-for="collection in collections" v-bind:key="collection.id">
-    <CollectionCard :collection="collection" />
-  </div>
-</q-page>
+  <q-page class="bg-cyan-1">
+    <HeadPage location="Actions" />
+    <div class="q-px-md q-ml-xl interpolate-font-title">
+      Suivi des actions
+    </div>
+    <div v-for="collection in collections" v-bind:key="collection.id">
+      <CollectionCard :collection="collection" :allowDynamicAttributes=true />
+    </div>
+  </q-page>
 </template>
 
 <script lang="ts">
@@ -29,8 +32,7 @@ export default defineComponent({
     fetchCollections() {
       api.get('/collections')
       .then(response => {
-        console.log(response);
-        this.collections = response.data;
+        this.collections = response.data.slice().reverse();
       })
       .catch(error => {
         if (error.code === 'ERR_NETWORK')

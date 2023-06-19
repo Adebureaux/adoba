@@ -1,7 +1,7 @@
 <template>
     <q-page class="bg-cyan-1">
     <HeadPage />
-    <div class="text-black text-center q-pa-md flex flex-center q-ma-xl">
+    <div class="text-black text-center absolute-center">
       <div>
         <div class="interpolate-font">
           Il semblerait que cette page ne soit pas encore disponible ...
@@ -9,7 +9,7 @@
 
         <q-btn
           class="q-mt-xl"
-          color="black"
+          color="primary"
           text-color="white"
           unelevated
           to="/"
@@ -27,6 +27,6 @@ import HeadPage from 'components/HeadPage.vue';
 
 export default defineComponent({
   name: 'ComingSoon',
-  components: { HeadPage }
+  components: { HeadPage },
 });
 </script>

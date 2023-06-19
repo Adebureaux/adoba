@@ -17,6 +17,19 @@ class IndicatorsController < ApplicationController
 
   def update
     indicator = params[:indicator]
+
+    # Check for duplicate indicator
+    if @indicator.dynamic_attributes.include?(indicator)
+      render json: { error: "Cet indicateur existe déjà" }, status: :unprocessable_entity
+      return
+    end
+
+    # Check string length
+    if indicator.length < 3 || indicator.length > 30
+      render json: { error: "L'indicateur doit être entre 3 et 30 caractères" }, status: :unprocessable_entity
+      return
+    end
+
     @indicator.dynamic_attributes << indicator
     if @indicator.save
       render json: { message: "Indicator successfully updated" }

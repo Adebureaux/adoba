@@ -10,6 +10,10 @@ npm 9.7.1
 
 quasar client 2.0.0
 
+bundler 2.4.14
+
+gem 3.4.14
+
 # How to run this project
 
   * ```git clone https://github.com/Adebureaux/adoba.git```

@@ -36,7 +36,7 @@ The api routes are defined as follow:
 * ```GET /indicators```
 Returns the string array of indicators.
 
-* ```PATCH /indicators:indicator```
+* ```PATCH /indicators```
 Update the string array of indicators.
 Params: indicator as string
 

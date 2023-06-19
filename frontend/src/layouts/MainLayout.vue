@@ -4,7 +4,7 @@
       v-model="drawer"
       show-if-above
       :width=250
-      :breakpoint=425
+      :breakpoint=560
       bordered
     >
       <q-btn
@@ -15,16 +15,27 @@
         flat
         label="Actualités"
         no-caps
+        to="/actualites"
       />
       <q-btn
         align="left"
         class="q-pl-xl full-width q-ma-sm row"
         size="20px"
-        :icon="mdiCheckboxMarkedCirclePlusOutline"
+        :icon="mdiCheckboxMarkedOutline"
         flat
         label="Actions"
         no-caps
-      />
+        to="/actions"
+      >
+        <q-avatar
+          class="q-ml-lg"
+          color="teal-10"
+          text-color="white"
+          size="25px"
+        >
+          {{collections_number}}
+        </q-avatar>
+      </q-btn>
       <q-btn
         align="left"
         class="q-pl-xl full-width q-ma-sm row"
@@ -34,15 +45,7 @@
         label="Declarations"
         no-caps
         no-wrap
-      />
-      <q-btn
-        align="left"
-        class="q-pl-xl full-width q-ma-sm row"
-        :icon="mdiStorefrontOutline"
-        size="20px"
-        flat
-        label="Réseau"
-        no-caps
+        to="/declarations"
       />
       <q-btn
         align="left"
@@ -52,17 +55,9 @@
         flat
         label="Gestion"
         no-caps
-      >
-      <q-avatar
-        class="q-ml-lg"
-        color="teal-10"
-        text-color="white"
-        size="30px"
-      >
-        {{collections_number}}
-      </q-avatar>
-      </q-btn>
-      <div class="bottom">
+        to="/gestion"
+      />
+      <div class="q-pt-xl">
         <div>
           <q-btn
             align="left"
@@ -81,11 +76,11 @@
     </q-drawer>
       <q-btn
         v-if="!drawer"
-        class="fixed-left vertical-middle q-ma-sm above"
+        class="fixed-top-left q-ma-sm above"
         color="grey-7"
         flat
         dense
-        :icon="mdiArrowRightBoldOutline"
+        :icon="mdiMenu"
         aria-label="Drawer"
         @click="drawer = true"
       />
@@ -97,7 +92,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { mdiViewDashboardOutline, mdiCheckboxMarkedCirclePlusOutline, mdiNoteTextOutline, mdiStorefrontOutline, mdiHammerWrench, mdiHelpCircleOutline, mdiArrowRightBoldOutline } from '@quasar/extras/mdi-v6';
+import { mdiViewDashboardOutline, mdiCheckboxMarkedOutline, mdiNoteTextOutline, mdiHammerWrench, mdiHelpCircleOutline, mdiMenu } from '@quasar/extras/mdi-v6';
 import api from 'src/services/api';
 
 export default defineComponent({
@@ -108,48 +103,41 @@ export default defineComponent({
     return {
       drawer,
       collections_number,
-      mdiViewDashboardOutline: '',
-      mdiCheckboxMarkedCirclePlusOutline: '',
-      mdiNoteTextOutline: '',
-      mdiStorefrontOutline: '',
-      mdiHammerWrench: '',
-      mdiHelpCircleOutline: '',
-      mdiArrowRightBoldOutline: '',
     }
   },
-  created() {
-    this.mdiViewDashboardOutline = mdiViewDashboardOutline;
-    this.mdiCheckboxMarkedCirclePlusOutline = mdiCheckboxMarkedCirclePlusOutline;
-    this.mdiNoteTextOutline = mdiNoteTextOutline;
-    this.mdiStorefrontOutline = mdiStorefrontOutline;
-    this.mdiHammerWrench = mdiHammerWrench;
-    this.mdiHelpCircleOutline = mdiHelpCircleOutline;
-    this.mdiArrowRightBoldOutline = mdiArrowRightBoldOutline;
+  data() {
+    return {
+      mdiViewDashboardOutline,
+      mdiCheckboxMarkedOutline,
+      mdiNoteTextOutline,
+      mdiHammerWrench,
+      mdiHelpCircleOutline,
+      mdiMenu
+    }
   },
   mounted() {
-    this.fetchCollections()
+    this.fetchCollectionsNumber()
   },
   methods: {
-    async fetchCollections() {
-      const response = await api.get('/collections/count')
-      this.collections_number = response.data.count
-    },
+    fetchCollectionsNumber() {
+      api.get('/collections/count')
+      .then(response => {
+        this.collections_number = response.data.count;
+      })
+      .catch(error => {
+        if (error.code === 'ERR_NETWORK')
+          console.error('Network error: Cant connect the API.')
+        else
+          console.error(error.message)
+      })
+    }
   },
 });
 </script>
 
 <style lang="sass" scoped>
 .padding-top
-  margin-top: 16vh
-
+  margin-top: 18vh
 .above
   z-index: 9999
-
-.bottom
-  position: absolute
-  bottom: 12px
-  display: flex
-  flex-direction: column
-  width: 100%
-  justify-content: flex-start
 </style>

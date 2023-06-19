@@ -1,6 +1,7 @@
-export interface Collection {
+export interface ICollection {
   id: number;
   name: string;
+  date: string;
   association_name: string;
-  dynamic_attributes: Array<any>;
+  dynamic_attributes: { [key: string]: string };
 }

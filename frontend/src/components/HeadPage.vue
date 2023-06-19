@@ -9,7 +9,12 @@
       />
     </div>
     <div class="location-container">
-      <span class=" text-grey-7" style="font-size: 18px;">{{location}}</span>
+      <span class="text-grey-7" style="font-size: 18px;">
+        <q-btn flat no-caps to="/">Dashboard</q-btn>
+        <span v-if="location !== ''">
+          <span class="gt-sm"> / </span><q-btn flat no-caps>{{ location }}</q-btn>
+        </span>
+      </span>
     </div>
     <q-space />
     <div>
@@ -35,7 +40,7 @@ import { mdiViewDashboardOutline, mdiBell } from '@quasar/extras/mdi-v6';
 export default defineComponent({
   name: 'HeadPage',
   props: {
-    location: { type: String, default: 'Dashboard' }
+    location: { type: String, default: '' }
   },
   setup() {
     return {
@@ -46,6 +51,13 @@ export default defineComponent({
   created() {
     this.mdiViewDashboardOutline = mdiViewDashboardOutline
     this.mdiBell = mdiBell
+  },
+  methods: {
+    goHome() {
+      this.$router.push({
+        path: '/',
+      })
+    }
   }
 })
 </script>
@@ -57,5 +69,9 @@ export default defineComponent({
 
 .location-container
   flex-grow: 1
+
+@media screen and (max-width: 800px)
+  .separator
+    display: none
 
 </style>

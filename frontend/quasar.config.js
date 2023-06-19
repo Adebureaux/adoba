@@ -19,7 +19,7 @@ module.exports = configure(function (/* ctx */) {
       // include: [],
       // exclude: [],
       // rawOptions: {},
-      warnings: true,
+      warnings: false,
       errors: true
     },
 
@@ -30,7 +30,6 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
-
 
     ],
 

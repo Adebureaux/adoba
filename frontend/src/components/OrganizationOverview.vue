@@ -1,10 +1,24 @@
 <template>
-  <div>
-    <div>
-    <img :src="logo">
-      <span class="absolute-center">Lorem</span>
-    </div>
+  <div class="row justify-evenly no-wrap">
+    <q-item>
+      <q-item-section>
+        <img class="interpolate-img" :src="logo">
+      </q-item-section>
+    </q-item>
+    <q-item>
+      <q-item-section class="interpolate-font">
+        <span><span class="number">{{establishment_number}}</span>
+        établissement<span v-if="establishment_number > 1">s</span></span>
+      </q-item-section>
+    </q-item>
+    <q-item>
+      <q-item-section class="interpolate-font">
+        <span><span class="number">{{actions}}</span>
+        action<span v-if="actions > 1">s</span></span>
+      </q-item-section>
+    </q-item>
   </div>
+
 </template>
 
 <script lang="ts">
@@ -21,8 +35,15 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
-img
+@use "src/css/interpolate" as r
+
+.interpolate-img
+  @include r.interpolate(width, 320px, 2560px, 50px, 150px)
   border-radius: 25%
-  width: 80px
+
+.number
+  @include r.interpolate(font-size, 320px, 2560px, 20px, 60px)
+  font-weight: bold
+  color: $primary
 
 </style>

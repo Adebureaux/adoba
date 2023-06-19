@@ -42,11 +42,11 @@ Returns the string array of indicators.
 
 * ```PATCH /indicators```
 Update the string array of indicators.
-Params: indicator as string
+Params: indicator (string)
 
 * ```DELETE /indicators```
 Takes a string :indicator and removes it from the array of indicators.
-Params: indicator as string
+Params: indicator (string)
 
 ## Collections
 Collection object is defined as follow:
@@ -72,4 +72,4 @@ Params: Collection object
 
 * ```DELETE /collections``` (Implemented but not used yet)
 Takes a Collection id and delete it from the database.
-Params: id as number
+Params: id (number)

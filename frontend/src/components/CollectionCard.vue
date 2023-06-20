@@ -12,7 +12,7 @@
          <q-card-section>
           Date: <span class="text-bold">{{ collection.date }}</span>
          </q-card-section>
-          <q-card-section v-for="(attribute, key) in collection.dynamic_attributes.dynamic_attributes" v-bind:key="attribute">
+          <q-card-section v-for="(attribute, key) in collection.dynamic_attributes" v-bind:key="attribute">
             {{ key }}: <span class="text-bold">{{ attribute }}</span>
           </q-card-section>
         </q-card>

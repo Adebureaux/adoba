@@ -7,8 +7,6 @@ class CollectionsController < ApplicationController
 
 	# Make an instance of the collection
 	def create
-		dynamic_attributes = params
-
 		@collection = Collection.new(
 			name:params[:name],
 			date:params[:date],

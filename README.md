@@ -1,6 +1,6 @@
 # System dependencies
 
-ruby 3.2.2
+ruby 3.3.5
 
 rails 7.0.5
 

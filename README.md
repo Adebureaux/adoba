@@ -14,18 +14,17 @@ bundler 2.4.14
 
 gem 3.4.14
 
-# How to run this project
+# How to run this project ?
 
   * ```git clone https://github.com/Adebureaux/adoba.git```
   * ```cd adoba```
-  * Split in two terminals
-  * In the first one
+  * Run the server
   * ```cd backend```
   * ```bundle install --gemfile Gemfile```
   * ```rails db:migrate```
   * ```rails db:seed```
   * ```rails server```
-  * In the other terminal
+  * Run the frontend
   * ```cd frontend```
   * ```npm i```
   * ```quasar dev``` or ```npx quasar dev```
